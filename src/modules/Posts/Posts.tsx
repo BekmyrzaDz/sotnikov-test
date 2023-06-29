@@ -35,9 +35,18 @@ interface IUser {
   }
 }
 
+interface IComment {
+  postId: number
+  id: number
+  name: string
+  email: string
+  body: string
+}
+
 export const Posts = () => {
   const [posts, setPosts] = useState<IPost[]>([])
   const [users, setUsers] = useState<IUser[]>([])
+  const [comments, setComments] = useState<IComment[]>([])
 
   const lmt: string | null | number = localStorage.getItem('lmt')
   const [limit, setLimit] = useState<number>(parseInt(lmt as string) || 10)
@@ -69,9 +78,19 @@ export const Posts = () => {
     }
   }
 
+  const getComments = async (): Promise<void> => {
+    try {
+      const response = await axios.get<IComment[]>(`comments`)
+      setComments(response?.data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   useEffect(() => {
     getPosts()
     getUsers()
+    getComments()
   }, [page, limit])
 
   return (
@@ -88,8 +107,14 @@ export const Posts = () => {
                     }
                   })
 
+                  const commentsList = comments.filter(comment => {
+                    if (comment.postId === post.id) {
+                      return comment
+                    }
+                  })
+
                   return (
-                    <Card key={post.id} post={post} user={user as IUser}/>
+                    <Card key={post.id} post={post} user={user as IUser} comments={commentsList}/>
                   )
                 })}
               </>

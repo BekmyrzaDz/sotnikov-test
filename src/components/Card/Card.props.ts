@@ -29,7 +29,16 @@ interface IUser {
   }
 }
 
+interface IComment {
+  postId: number
+  id: number
+  name: string
+  email: string
+  body: string
+}
+
 export interface CardProps {
   post: IPost
   user: IUser
+  comments: IComment[]
 }

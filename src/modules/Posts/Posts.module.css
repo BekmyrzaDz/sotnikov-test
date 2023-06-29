@@ -1,10 +1,6 @@
 .posts {
   padding: 30px 80px;
 }
-.posts .container {
-  max-width: 1215px;
-  margin: 0 auto;
-}
 .posts .wrap {
   display: flex;
   flex-direction: column;

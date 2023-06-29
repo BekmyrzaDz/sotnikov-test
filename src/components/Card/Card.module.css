@@ -1,45 +1,102 @@
 .card {
   width: 100%;
-  min-height: 250px;
+  height: 100%;
   background: #fff;
   -webkit-border-radius: 16px;
   -moz-border-radius: 16px;
   border-radius: 16px;
   padding: 16px;
 }
-.card .content .title {
+.card .top {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card .top .content .usernameBox {
+  border-bottom: 1px solid #f1f1f1;
+}
+.card .top .content .usernameBox .username {
+  font-family: "Segoe UI";
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.card .top .content .title {
   font-family: "Segoe UI";
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 8px;
 }
-.card .content .body {
+.card .top .content .title .titleInput {
+  width: 100%;
+}
+.card .top .content .body {
   font-family: "Segoe UI";
   font-size: 14px;
   font-weight: 400;
   margin-bottom: 8px;
 }
-.card .content .username {
+.card .top .btns {
+  display: flex;
+  gap: 10px;
+}
+.card .top .btns .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+}
+.card .top .btns .button .comment,
+.card .top .btns .button .edit,
+.card .top .btns .button .delete,
+.card .top .btns .button .favorite {
+  width: 22px;
+  height: 22px;
+  color: #000000;
+}
+.card .top .btns .button .commentActive {
+  color: #f2f2f2;
+}
+.card .top .btns .commentBtn,
+.card .top .btns .editBtn,
+.card .top .btns .deleteBtn,
+.card .top .btns .favoriteBtn {
+  background: #f2f2f2;
+}
+.card .top .btns .commentBtnActive {
+  background: #000000;
+}
+.card .wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.card .wrap .comment {
+  background: #f2f2f2;
+  padding: 16px;
+  border-radius: 16px;
+}
+.card .wrap .comment .emailBox {
+  border-bottom: 1px solid #000000;
+}
+.card .wrap .comment .emailBox .email {
   font-family: "Segoe UI";
   font-size: 14px;
   font-weight: 600;
   margin-bottom: 8px;
 }
-.card .btns {
-  display: flex;
-  gap: 10px;
+.card .wrap .comment .name {
+  font-family: "Segoe UI";
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
 }
-.card .btns .button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.card .btns .button .comment,
-.card .btns .button .edit,
-.card .btns .button .delete,
-.card .btns .button .favorite {
-  width: 22px;
-  height: 22px;
+.card .wrap .comment .body {
+  font-family: "Segoe UI";
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 8px;
 }
 
 /*# sourceMappingURL=Card.module.css.map */
