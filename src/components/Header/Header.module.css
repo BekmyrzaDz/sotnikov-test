@@ -1,0 +1,24 @@
+.root {
+  min-height: 118px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  background: #000;
+}
+.root a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: Montserrat;
+}
+.root a:hover {
+  text-decoration: underline;
+}
+.root .active {
+  color: red;
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=Header.module.css.map */

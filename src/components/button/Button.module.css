@@ -1,0 +1,16 @@
+.button {
+  background: #756FB3;
+  border-radius: 10px;
+  padding: 8px;
+  color: #fff;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  transition: 0.5s;
+}
+.button:hover {
+  transform: scale(1.05);
+  transition: 0.5s;
+}
+
+/*# sourceMappingURL=Button.module.css.map */

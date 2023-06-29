@@ -1,0 +1,45 @@
+.card {
+  width: 100%;
+  min-height: 250px;
+  background: #fff;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  border-radius: 16px;
+  padding: 16px;
+}
+.card .content .title {
+  font-family: "Segoe UI";
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.card .content .body {
+  font-family: "Segoe UI";
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.card .content .username {
+  font-family: "Segoe UI";
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.card .btns {
+  display: flex;
+  gap: 10px;
+}
+.card .btns .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card .btns .button .comment,
+.card .btns .button .edit,
+.card .btns .button .delete,
+.card .btns .button .favorite {
+  width: 22px;
+  height: 22px;
+}
+
+/*# sourceMappingURL=Card.module.css.map */

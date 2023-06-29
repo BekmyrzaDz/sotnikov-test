@@ -1,0 +1,22 @@
+.posts {
+  padding: 30px 80px;
+}
+.posts .container {
+  max-width: 1215px;
+  margin: 0 auto;
+}
+.posts .wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.posts .pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+/*# sourceMappingURL=Posts.module.css.map */

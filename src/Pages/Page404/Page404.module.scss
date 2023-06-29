@@ -1,0 +1,29 @@
+.page404 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  left: 64px;
+  top: 40px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.img {
+  margin-bottom: 40px;
+}
+
+.imgItem {
+  max-width: 500px;
+  max-height: 500px;
+}

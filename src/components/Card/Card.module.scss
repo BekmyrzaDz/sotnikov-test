@@ -1,0 +1,50 @@
+.card {
+  width: 100%;
+  min-height: 250px;
+  background: #fff;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  border-radius: 16px;
+  padding: 16px;
+
+  .content {
+    .title {
+      font-family: "Segoe UI";
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .body {
+      font-family: "Segoe UI";
+      font-size: 14px;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+
+    .username {
+      font-family: "Segoe UI";
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+  }
+
+  .btns {
+    display: flex;
+    gap: 10px;
+    .button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .comment,
+      .edit,
+      .delete,
+      .favorite {
+        width: 22px;
+        height: 22px;
+      }
+    }
+  }
+}
