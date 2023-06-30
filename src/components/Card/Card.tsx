@@ -82,8 +82,19 @@ export const Card: FC<CardProps> =
             : item)
       )
 
-      editPostById(post.id as number, {title, body})
-      editUserById(user.id as number, {username})
+      const newPost: IPost = {
+        ...post,
+        title,
+        body
+      }
+
+      const newUser: IUser = {
+        ...user,
+        username,
+      }
+
+      editPostById(post.id as number, newPost)
+      editUserById(user.id as number, newUser)
 
       setActive(false)
     }
