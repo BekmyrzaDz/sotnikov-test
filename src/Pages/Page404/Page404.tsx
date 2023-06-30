@@ -1,6 +1,6 @@
 import notFoundImg from '../../assets/images/notFoundImg.svg'
 import styles from './Page404.module.scss'
-import Button from '../../components/button'
+import {Button} from '../../components'
 import { useNavigate } from 'react-router-dom'
 
 export const Page404 = () => {

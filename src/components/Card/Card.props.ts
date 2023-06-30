@@ -1,11 +1,11 @@
-interface IPost {
+export interface IPost {
   body: string
   id: number
   title: string
   userId: number
 }
 
-interface IUser {
+export interface IUser {
   id: number
   name: string
   username: string
@@ -39,6 +39,10 @@ interface IComment {
 
 export interface CardProps {
   post: IPost
+  setPosts:  React.Dispatch<React.SetStateAction<IPost[]>>
   user: IUser
+  setUsers:  React.Dispatch<React.SetStateAction<IUser[]>>
   comments: IComment[]
+  favArr: number[]
+  setFavArray:  React.Dispatch<React.SetStateAction<number[]>>
 }

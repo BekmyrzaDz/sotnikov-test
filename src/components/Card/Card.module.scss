@@ -33,6 +33,11 @@
 
         .titleInput {
           width: 100%;
+          padding: 1rem 0;
+        }
+
+        .titleInput:not(:read-only) {
+          color: black;
         }
       }
 
@@ -78,6 +83,15 @@
       .commentBtnActive {
         background: #000000;
       }
+
+      .favoriteRedBtn {
+        background: #f2f2f2;
+
+        .favorite {
+          color: red;
+        }
+      }
+
     }
   }
 
@@ -115,6 +129,36 @@
         font-weight: 400;
         margin-bottom: 8px;
       }
+    }
+  }
+
+  .modalWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .top {
+
+    }
+    .modalBtns {
+      display: flex;
+      gap: 20px;
+    }
+  }
+
+  .deleteModalWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .title {
+      text-align: center;
+      font-family: "Segoe UI";
+    }
+    .top {
+
+    }
+    .modalBtns {
+      display: flex;
+      gap: 20px;
     }
   }
 }

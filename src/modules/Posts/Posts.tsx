@@ -60,6 +60,10 @@ export const Posts = () => {
     setPage(1)
   }
 
+  const favKey = "favorites"
+  const favorites: number[] = JSON.parse(localStorage.getItem(favKey) as string ?? '[]')
+  const [favArr, setFavArray] = useState<number[]>(favorites)
+
   const getPosts = async (): Promise<void> => {
     try {
       const response = await axios.get<IPost[]>(`posts?_page=${page}&_limit=${limit}`)
@@ -114,7 +118,16 @@ export const Posts = () => {
                   })
 
                   return (
-                    <Card key={post.id} post={post} user={user as IUser} comments={commentsList}/>
+                    <Card
+                      key={post.id}
+                      post={post}
+                      setPosts={setPosts}
+                      user={user as IUser}
+                      setUsers={setUsers}
+                      comments={commentsList}
+                      favArr={favArr}
+                      setFavArray={setFavArray}
+                    />
                   )
                 })}
               </>

@@ -30,6 +30,10 @@
 }
 .card .top .content .title .titleInput {
   width: 100%;
+  padding: 1rem 0;
+}
+.card .top .content .title .titleInput:not(:read-only) {
+  color: black;
 }
 .card .top .content .body {
   font-family: "Segoe UI";
@@ -67,6 +71,12 @@
 .card .top .btns .commentBtnActive {
   background: #000000;
 }
+.card .top .btns .favoriteRedBtn {
+  background: #f2f2f2;
+}
+.card .top .btns .favoriteRedBtn .favorite {
+  color: red;
+}
 .card .wrap {
   display: flex;
   flex-direction: column;
@@ -97,6 +107,28 @@
   font-size: 14px;
   font-weight: 400;
   margin-bottom: 8px;
+}
+.card .modalWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.card .modalWrap .modalBtns {
+  display: flex;
+  gap: 20px;
+}
+.card .deleteModalWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.card .deleteModalWrap .title {
+  text-align: center;
+  font-family: "Segoe UI";
+}
+.card .deleteModalWrap .modalBtns {
+  display: flex;
+  gap: 20px;
 }
 
 /*# sourceMappingURL=Card.module.css.map */
