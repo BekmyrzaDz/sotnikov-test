@@ -1,0 +1,51 @@
+@import '../../sass/_base.scss';
+
+.modal {
+  height: 100vh;
+  //width: calc(100% - 247px);
+  width: 100%;
+  background-color: #373333;
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: $tran-05;
+}
+
+.modal.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modalContent {
+  padding: 20px;
+  border-radius: 12px;
+  background-color: $white-color;
+  transform: scale(0.5);
+  transition: $tran-04;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+}
+
+.contentInner {
+  min-width: 280px;
+  min-height: 100px;
+}
+
+.modalContent.active {
+  transform: scale(1);
+}
+
+.cross {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  cursor: pointer;
+}
