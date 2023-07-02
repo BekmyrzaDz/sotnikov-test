@@ -30,7 +30,7 @@ export interface IUser {
 
 export interface CardProps {
   album: IAlbum
-  setAlbums:  React.Dispatch<React.SetStateAction<IAlbum[]>>
+  setAlbums?:  React.Dispatch<React.SetStateAction<IAlbum[]>>
   user: IUser
-  setUsers:  React.Dispatch<React.SetStateAction<IUser[]>>
+  setUsers?:  React.Dispatch<React.SetStateAction<IUser[]>>
 }

@@ -1,5 +1,7 @@
 import {useEffect, useState} from "react"
 import axios from '../../api/axios'
+import {Container, Pagination, Stack} from "@mui/material";
+import {AlbumCard, DefaultSelect} from "../../components";
 import styles from './Photos.module.scss'
 
 interface IAlbums {
@@ -33,18 +35,29 @@ interface IUser {
 }
 
 export const Photos = () => {
-  const [albums, setAlbums ] = useState<IAlbums[]>([])
+  const [albums, setAlbums] = useState<IAlbums[]>([])
   const [users, setUsers] = useState<IUser[]>([])
+
+  const lmt: string | null | number = localStorage.getItem('lmt')
+  const [limit, setLimit] = useState<number>(parseInt(lmt as string) || 10)
+
+  const [page, setPage] = useState<number>(1)
+
+  const qyt: string | null | number = localStorage.getItem('qyt')
+  const [pageQyt, setPageQyt] = useState<number>(parseInt(qyt as string) || 10)
+
+  if (pageQyt < page) {
+    setPage(1)
+  }
 
   console.log('albums', albums)
   console.log('users', users)
 
   const getAlbums = async (): Promise<void> => {
     try {
-      const response = await axios.get<IAlbums[]>(`albums`)
+      const response = await axios.get<IAlbums[]>(`albums?_page=${page}&_limit=${limit}`)
       setAlbums(response?.data)
       console.log(response)
-      // response?.data?.map((post) => localStorage.setItem(``, null))
     } catch (error) {
       console.log(error)
     }
@@ -62,11 +75,41 @@ export const Photos = () => {
   useEffect(() => {
     getAlbums()
     getUsers()
-  }, [])
+  }, [page, limit])
 
   return (
-    <div className={styles.albums}>
-      <h1>Albums</h1>
+    <div className={styles.wrap}>
+      <Stack spacing={3}>
+        <Container maxWidth={'sm'}>
+          <div className={styles.albums}>
+            {albums?.map(album => {
+                const user = users?.find(user => {
+                  if (user.id === album.userId) {
+                    return user
+                  }
+                })
+
+                return (
+                  <AlbumCard key={album.id} album={album} user={user as IUser}/>
+                )
+              }
+            )}
+          </div>
+        </Container>
+
+        <div className={styles.pagination}>
+          <Pagination
+            count={pageQyt}
+            page={page as number}
+            variant="outlined"
+            color="primary"
+            showFirstButton
+            showLastButton
+            onChange={(_, num) => setPage(num)}
+          />
+          <DefaultSelect limit={`${limit}`} setLimit={setLimit} setPageQyt={setPageQyt}/>
+        </div>
+      </Stack>
     </div>
   );
 };
