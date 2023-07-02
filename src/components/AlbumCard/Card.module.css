@@ -29,5 +29,63 @@
   text-decoration: underline;
   cursor: pointer;
 }
+.card .btns {
+  display: flex;
+  gap: 10px;
+}
+.card .btns .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+}
+.card .btns .button .comment,
+.card .btns .button .edit,
+.card .btns .button .delete,
+.card .btns .button .favorite {
+  width: 22px;
+  height: 22px;
+  color: #000000;
+}
+.card .btns .button .commentActive {
+  color: #f2f2f2;
+}
+.card .btns .commentBtn,
+.card .btns .editBtn,
+.card .btns .deleteBtn,
+.card .btns .favoriteBtn {
+  background: #f2f2f2;
+}
+.card .btns .commentBtnActive {
+  background: #000000;
+}
+.card .btns .favoriteRedBtn {
+  background: #f2f2f2;
+}
+.card .btns .favoriteRedBtn .favorite {
+  color: red;
+}
+.card .modalWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.card .modalWrap .modalBtns {
+  display: flex;
+  gap: 20px;
+}
+.card .deleteModalWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.card .deleteModalWrap .title {
+  text-align: center;
+  font-family: "Segoe UI";
+}
+.card .deleteModalWrap .modalBtns {
+  display: flex;
+  gap: 20px;
+}
 
 /*# sourceMappingURL=Card.module.css.map */

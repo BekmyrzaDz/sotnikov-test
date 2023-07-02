@@ -38,8 +38,8 @@ export const Photos = () => {
   const [albums, setAlbums] = useState<IAlbums[]>([])
   const [users, setUsers] = useState<IUser[]>([])
 
-  const lmt: string | null | number = localStorage.getItem('lmt')
-  const [limit, setLimit] = useState<number>(parseInt(lmt as string) || 10)
+  const lmt: string = JSON.parse(localStorage.getItem('lmt') as string)
+  const [limit, setLimit] = useState<number>(parseInt(lmt) || 10)
 
   const [page, setPage] = useState<number>(1)
 
@@ -49,6 +49,10 @@ export const Photos = () => {
   if (pageQyt < page) {
     setPage(1)
   }
+
+  const favKey = "albumFavorites"
+  const favorites: number[] = JSON.parse(localStorage.getItem(favKey) as string ?? '[]')
+  const [favArr, setFavArray] = useState<number[]>(favorites)
 
   console.log('albums', albums)
   console.log('users', users)
@@ -90,7 +94,15 @@ export const Photos = () => {
                 })
 
                 return (
-                  <AlbumCard key={album.id} album={album} user={user as IUser}/>
+                  <AlbumCard
+                    key={album.id}
+                    album={album}
+                    setAlbums={setAlbums}
+                    user={user as IUser}
+                    setUsers={setUsers}
+                    favArr={favArr}
+                    setFavArray={setFavArray}
+                  />
                 )
               }
             )}
