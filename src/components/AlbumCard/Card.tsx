@@ -7,6 +7,7 @@ import {FaEdit, FaHeart, FaTrash} from "react-icons/fa";
 import axios from "../../api/axios.ts";
 import {Modal} from "../ModalPopup/Modal.tsx";
 import {TextField} from "@mui/material";
+import {Link} from "react-router-dom";
 
 export const AlbumCard: FC<CardProps> =
   ({
@@ -116,8 +117,7 @@ export const AlbumCard: FC<CardProps> =
         <div className={styles.usernameBox}>
           <h5 className={styles.username}>{user?.username}</h5>
         </div>
-        <h3 className={styles.title}>{album?.title}</h3>
-
+        <Link className={styles.title} to={`/albums/${album?.id}`}>{album?.title}</Link>
         <div className={styles.btns}>
           <Button className={clsx(styles.button, styles.editBtn)} onClick={editHandler}>
             <FaEdit className={clsx(styles.edit)}/>
